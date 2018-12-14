@@ -17,9 +17,11 @@ vals = set(filter(lambda x: x >= k, arr))
 
 #Compute all subarrays 
 res = [[arr[i-1], arr[i], arr[i+1]] if arr[i] in vals else None for i in range(1,len(arr)-1)] 
-#Edge Cases
+#Edge cases 
 if arr[0] in vals: res.append(arr[0:3])
 if arr[-1] in vals: res.append(arr[-3:]) 
 
 res = list(filter(lambda x: x != None, res))
 print("\n".join(list(map(str, res))))
+
+#O(n) time , O(k) space 
